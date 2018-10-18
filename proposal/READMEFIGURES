@@ -1,0 +1,126 @@
+Including figures with ESOFORM proposals
+=========================================
+
+As of Period 74, ESOFORM LaTeX proposals are converted to
+printable format using "pdfLaTeX" instead of "LaTeX". The change
+should be largely transparent for all submissions that do not include
+figures (macro \MakePicture); this guide addresses issues related to
+composing an ESOFORM proposal with figures. The following notes are
+very much oriented towards users of Unix derivatives like Linux,
+Solaris or MacOS X.
+
+IMPORTANT NOTE: pdfLaTeX allows one to include a figure file without
+                any filename extensions (like ".pdf" or ".jpg").
+                Filenames used within \MakePicture macros, on the
+                other hand, should ALWAYS specify the
+                extension; failing to do so may result in your
+                proposal failing validation.
+
+DISCLAIMER:     The European Southern Observatory does not endorse,
+                support, or distribute any of the software tools
+                mentioned in this document.
+
+
+1. Basics
+---------
+
+pdfLaTeX supports inclusion of different picture formats. ESOFORM
+figures -- previously included as Encapsulated PostScript (EPS) files --
+can now be included as PDF, JPEG or PNG files; multiple formats can be
+included in the same proposal. Which format to choose depends on
+available software tools, the type of figure, the desired quality and
+the file size.
+
+PNG and JPEG are "raster" formats; that is, they represent an
+image as a grid of pixels. They are the natural representation for
+image-type data, but do not lend themselves as well to represent
+"vector" type graphics, or text.
+
+PDF files are written in a more high-level language resembling
+PostScript: text objects and arcs are stored as such, not as bitmaps,
+and can be better scaled and rotated. Although not as large as
+PostScript files, PDF files are generally larger than an equivalent
+raster image. 
+
+ESO supports PDF 1.0 to 1.3; regardless of format, figure files should not be larger that 1 MB.
+
+
+2. What should I do?
+--------------------
+
+Experiment: if the software tool you are using can generate your
+figure in different formats, try them out and compare their output
+(don't forget that proposals at ESO are printed and distributed to the
+Panels in black & white!). Choose a format that makes your proposal
+visually appealing while generating a small figure file: larger files
+take more time to upload, increasing the probability of transmission
+failures.
+
+
+3. My software tool can only generate PostScript: now what?
+-----------------------------------------------------------
+
+EPS files cannot be directly processed by pdfLaTeX. However,
+conversion of a figure file from PostScript to PDF is generally easy
+and generates smaller, high quality images. EPS files can be converted
+to PDF by GhostScript, Acrobat Distiller or other PDF-to-PS
+converters (see section "Web resources" below). 
+To get around bounding box issues, however, we recommend
+to use "epstopdf", a publicly available Perl script that transforms
+the EPS file so that the start point is at the (0,0) coordinate, and
+the page size is set to exactly correspond to the bounding box.
+
+IMPORTANT NOTE: epstopdf makes use of GhostScript, and is available on
+                Solaris, Linux, MacOS X, and other Unix derivatives.
+                Please make sure you are using version 8.0 or later of
+                GhostScript. Although old versions might work there is
+                a higher chance of conversion problems.
+
+You may alternatively want to run "convert" (part of the ImageMagick
+suite of tools) on your EPS file:
+          convert figure.eps figure.pdf
+
+
+4. I can't get my PDF right, help!
+-----------------------------------
+
+If you really cannot convert your EPS figure to PDF, you can try
+converting it to one of the supported raster files, but the quality
+will probably suffer. Here are some possible procedures.
+
+(4.1) Open your EPS file with "xv", then save it as JPG or PNG.
+
+(4.2) If they are available on your system, use GhostScript and the 
+      Netpbm utilities to convert your EPS file to PNG via PNM
+      ("portable anymap" file). You can use "pstoimg" to help you: try
+      "pstoimg -help" for a list of available options.
+
+(4.3) Open your EPS file with a PostScript viewer like "gv", then grab
+      the image with some screen dump utility, like "xv" (on Windows,
+      you can use "GSview" and "!Quick Screen Capture", respectively).
+      The grabbed image can be saved in raster format.
+
+
+5. I'm lost!
+------------
+
+If all else fails, you can try to contact ESOFORM support at
+esoform@eso.org; we will do our best to try and help you get your
+figures right. Beware that your chances to get effective help will
+decrease to just about zero as we get close to the submission line:
+the last days and hours are usually hectic. Help us to help you: get
+to work on your figures well in advance of the deadline.
+
+
+6. Web resources
+----------------
+
+GhostScript:           http://www.ghostscript.com/
+Acrobat Distiller:     http://www.adobe.com/support/downloads/
+epstopdf:              http://www.tug.org/teTeX/
+ImageMagick (convert): http://www.imagemagick.org/
+xv:                    http://www.trilon.com/xv/
+netpbm:                http://netpbm.sourceforge.net/
+pstoimg:   http://saftsack.fs.uni-bayreuth.de/~latex2ht/ng-user/pstoimg
+GSView:                http://www.ghostgum.com.au/
+!Quick Screen Capture: http://www.etrusoft.com/

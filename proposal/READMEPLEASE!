@@ -1,0 +1,47 @@
+Dear user,
+
+in order to efficiently verify and submit your proposal, please note
+that:
+
+    - During the submission process you are now given the possibility to
+      review the appearance of your proposal. Before confirming the
+      submission, you will be required to confirm that its appearance is
+      satisfactory (figures are correctly sized and rotated, text
+      doesn't overflow, etc.). After confirmation and submission NO
+      FURTHER ALTERATIONS of your proposal will be possible, and it will
+      be distributed as-is to the OPC referees.
+      
+    - PostScript, TIFF and PDF 1.5 pictures ARE NO LONGER ACCEPTED.
+      Proposals are processed using an implementation of the pdfLaTeX
+      package accepting only PDF (1.0 to 1.4), JPEG, and PNG file
+      formats. (You can include these file formats in the same way you
+      included Encapsulated Postscript figures in the past.)
+      
+    - Regardless of format, figure files should not be larger that 1 MB.
+
+At the end of the submission procedure you will be shown an
+acknowledgment page: please print it and keep it as a receipt. Submitter
+and PI of the proposal should later receive an e-mail acknowledgment, as
+well.
+
+Please note that during the last two days before the submission
+deadline ESO's proposal handling system is usually very heavily loaded,
+which may cause delays in sending acknowledgments. If you are not sure
+whether your proposal has successfully entered the system, please DO NOT
+re-submit it, and rather write to esoform@eso.org for assistance.
+
+General suggestions:
+
+    - Always compile your proposal with pdfLaTex and PRINT it before
+      attempting submission. Many errors can be caught at this stage,
+      and doing so can save you a lot of time.
+      In case of errors, please read carefully the output in order to
+      identify the problem.
+
+    - Plan ahead! Even if the web system is faster than the old e-mail
+      based system, please try to submit the proposals at least several
+      hours before the deadline to avoid "last minute stress".
+
+    - Proposals will always be printed and distributed to the OPC in
+      black and white. Please make sure your color figures are legible
+      by the referees.

@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esoform version="0.0" cycle="102Z">	
+
+<macro name="begin" cardinality="1">
+			<parameter name="Text" description="proposalID" type="stringNoEmpty">
+		</parameter>
+	</macro>
+
+		<macro name="Abstract" cardinality="1">
+		<parameter name="Text" description="Abstract of the proposal" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="AwardedNights" cardinality="0..">
+		<parameter name="Telescope" description="telescope on which the time was given" type="stringNoEmpty">
+		</parameter>
+		<parameter name="AwardedTime" description="time and programme name" type="stringNoEmpty">
+		</parameter>
+	</macro>
+
+		<macro name="Calibrations" cardinality="0..1" verifier="org.eso.ohs.phrs.esoform.verifyMacro.CalibrationsMacroVerifier">
+		<parameter name="CalibrationType" description="description" type="stringNoEmpty">
+		<values>standard special</values>
+		</parameter>
+		<parameter name="CalibrationDescription" description="description">
+		</parameter>
+	</macro>
+
+	<macro name="CoI" cardinality="0..">
+		<parameter name="Initial" description="Name Initial" type="stringNoEmpty">
+		</parameter>
+		<parameter name="Surname" description="Surname" type="stringNoEmpty">
+		</parameter>
+		<parameter name="InstitutionCode" description="Institution code as defined in the user portal database" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="ConvertLargeToNormal" cardinality="0..1">
+		<parameter name="Text" description="description" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="Cycle" cardinality="1">
+		<parameter name="CycleLabel" description="cycle label">
+			<values>102Z</values>
+		</parameter>
+	</macro>
+	
+		<macro name="documentclass" cardinality="1">
+		<parameter name="Type" description="type of proposal">	
+		<values>esoform</values>
+		</parameter>
+	</macro>
+		
+		<macro name="Experience" cardinality="0..1">
+		<parameter name="Text" description="description" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="FutureNights" cardinality="0..">
+		<parameter name="Telescope" description=" telescope " type="stringNoEmpty">
+		</parameter>
+		<parameter name="FutureTime" description="time foreseen" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="ImmediateObjective" cardinality="0..1">
+		<parameter name="Text" description="description" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+	<macro name="INSconfig" cardinality="0..">
+		<parameter name="RunId" description=" run id " type="stringNoEmpty">
+		<errorDescription>The run id must be a capital letter between A and Z
+</errorDescription>
+	<regexp>^[A-Z]$</regexp>
+		</parameter>
+		<parameter name="Instrument" description=" instrument name " type="stringNoEmpty">
+		</parameter>
+		<parameter name="InsConfParameter" description="name of the filter" type="stringNoEmpty">
+		</parameter>
+		<parameter name="Value" description="value of the filter" type="stringNoEmpty">
+		</parameter>
+	</macro>
+
+	<macro name="LastObservationRemarks" cardinality="0..1">
+		<parameter name="Text" description="Report on the use of the ESO facilities during the last 2 years" type="stringNoEmpty">
+		</parameter>
+	</macro>
+
+	<macro name="Link" cardinality="0..">
+		<parameter name="FirstRunId" description="start referred run">
+<errorDescription>The run id must be a capital letter between A and Z
+</errorDescription>
+			<regexp>^[A-Z]$</regexp>
+		</parameter>
+		<parameter name="Keyword" description="kind of constraint">
+			<values>simultaneous after</values>
+		</parameter>
+		<parameter name="SecondRunId" description="end referred run">
+<errorDescription>The run id must be a capital letter between A and Z
+</errorDescription>
+			<regexp>^[A-Z]$</regexp>
+		</parameter>
+		<parameter name="Delay" description="Number of days of delay">
+<errorDescription>The delay must be a number (integer)
+</errorDescription>
+<regexp>[0-9]*</regexp>
+		</parameter>
+	</macro>
+	
+		<macro name="MakeCaption" cardinality="0..">
+		<parameter name="Text" description="description" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="MakePicture" cardinality="0..">
+		<parameter name="Name" description="name of the file" type="stringNoEmpty">
+<errorDescription>The picture name contains invalid characters or an invalid extension. Valid characters are: [a-zA-Z_0-9] . Supported extensions are: jpg, pdf, jpeg</errorDescription>
+	<regexp>^\w*\.((jpg)|(jpeg)|(pdf))$</regexp>
+		</parameter>
+		<parameter name="Size" description="dimension/rotation of the picture">
+		</parameter>
+	</macro>
+	
+		<macro name="ModeJustification" cardinality="0..1">
+		<parameter name="Text" description="description" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+	<macro name="ObservingRun" cardinality="1..42" verifier="org.eso.ohs.phrs.esoform.verifyMacro.ObservingRunMacroVerifier">
+		<parameter name="RunId" description="Run Id">
+<errorDescription>The run id must be a capital letter between A and Z. Optionally /alt can be specified.
+</errorDescription>
+		<regexp>^[A-Z](/alt)?$</regexp>
+		</parameter>
+		<parameter name="Period" description="requested period">
+			<values>102</values>
+		</parameter>
+		<parameter name="Instrument" description="instrument">
+			<values>ARTEMIS EFOSC2 ESPRESSO-1UT FLAMES FORS2 GRAVITY HARPS HAWKI KMOS LABOCA MUSE NACO OMEGACAM PI230 PIONIER SEPIA SINFONI SOFI SPHERE ULTRACAM UVES VIRCAM VISIR XSHOOTER</values>
+		</parameter>
+		<parameter name="TimeRequested" description="run requested time">
+	<errorDescription>Error in the requested time formula. Please check the manual
+</errorDescription>
+	<regexp>^(\d)?(\d)?(\d)?(\.\d)?(h|(n(\=([\d\.Hx\+])+)?))$</regexp>
+		</parameter>
+		<parameter name="Month" description="month of observation">
+			<values>
+				jan feb mar apr may jun jul aug sep oct nov dec any
+			</values>
+		</parameter>
+		<parameter name="Moon" description="moon phase">
+			<values>d g n</values>
+		</parameter>
+		<parameter name="Seeing" description="seeing">
+			<values>0.4 0.6 0.8 1.0 1.2 1.4 n</values>
+		</parameter>
+		<parameter name="Transparency" description="transparency">
+			<values>CLR PHO THN</values>
+		</parameter>
+		<parameter name="Mode" description="observing mode">
+			<values>s v</values>
+		</parameter>
+                <parameter name="RunType" description="The type of every single run">
+                        <errorDescription>The only allowed value is TOO</errorDescription>
+                        <regexp>([T][O][O])?</regexp>
+                </parameter>
+	</macro>
+	
+		<macro name="OPTICONfunded" cardinality="0..1">
+			<parameter name="txt" description="Opticon">
+		</parameter>
+	</macro>
+
+	<macro name="HasTimingConstraints" cardinality="0..1">
+		<parameter name="txt" description="empty text">
+		</parameter>
+	</macro>
+
+	<macro name="PI" cardinality="1">
+                <parameter name="Username" description="username of the PI" type="stringNoEmpty">
+                </parameter>
+        </macro>
+	
+	
+	<macro name="ProgrammeType" cardinality="1">
+		<parameter name="Type" description="type of proposal">	
+		<values>DDT CALIBRATION</values>
+		</parameter>
+	</macro>
+	
+
+
+	<macro name="DDTJustification" cardinality="1">
+		<parameter name="Text" description="description" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+	<macro name="SpecialRemarks" cardinality="0..">
+		<parameter name="Text" description=" special remark " type="stringNoEmpty">
+		</parameter>
+	</macro>
+	<macro name="LastObservationRemark" cardinality="0..">
+		<parameter name="Text" description=" special remark " type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+	<macro name="SpecialCalibrations" cardinality="0..">
+		<parameter name="Text" description=" special remark " type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+	<macro name="StandardCalibrations" cardinality="0..">
+		<parameter name="Text" description=" special remark " type="stringNoEmpty">
+		</parameter>
+	</macro> 	
+	
+	<macro name="TOORun" cardinality="0.." verifier="org.eso.ohs.phrs.esoform.verifyMacro.TooRunMacroVerifier">
+		<parameter name="RunId" description="description" type="stringNoEmpty">
+		</parameter>
+		<parameter name="Nature" description="description" type="stringNoEmpty">
+			<values>RRM ToO-hard ToO-soft normal</values>
+		</parameter>
+		<parameter name="TargetNumber" description="description">
+		</parameter>
+		<parameter name="TriggerNumber" description="description" >
+		</parameter>
+	</macro>
+	
+	<macro name="TOONotes" cardinality="0..1">
+		<parameter name="Text" description=" TOO notes " type="stringNoEmpty">
+		</parameter>
+	</macro> 	
+	
+	
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.ApexProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.CoIInstitutionCodeProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.GTOcontractProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.INSConfigProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.InstrumentsForLargeProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.InstrumentsForNormalProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.InstrumentsForShortProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.LargeExcludeMacrosProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.LargeOnlyMacrosProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.LinkProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.MakePictureProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.ObservationInRRMProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.ObservingRunDdtPeriodProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.ObservingRunLargePeriodProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.ObservingRunObservationModeProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.ObservingRunProposalMonthVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.ObservingRunProposalNormalPeriodVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.ObservingRunProposalSequenceVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.PiExistenceProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.RunSplittingProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.ShortProgrammeRequestedTimeProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.SpecialInstrProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.TargetProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.TimeCriticalProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.TooRunProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.UnsuitableTimeProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.VLTITargetProposalVerifier"/>
+<verifier name="org.eso.ohs.phrs.esoform.verifyProposal.ProposalTypeSubcategoryCodeProposalVerifier"/>
+
+		
+	<macro name="ProprietaryTime" cardinality="1">
+		<parameter name="Time" description="Proprietary time waver.">
+			<values>0 1 2 6 12</values>
+		</parameter>
+	</macro>
+
+	<macro name="Publications" cardinality="1">
+		<parameter name="Text" description="Report on the use of the ESO facilities during the last 2 years" type="stringNoEmpty">
+		</parameter>
+	</macro>
+
+	<macro name="RequestedDataRemark" cardinality="1">
+		<parameter name="Text" description="Data requested on the ESO Archive" type="stringNoEmpty">
+		</parameter>
+	</macro>
+
+        <macro name="RequestedDuplicateRemark" cardinality="0..1">
+                <parameter name="Text" description="description" type="stringNoEmpty">
+                </parameter>
+        </macro>
+
+		<macro name="Resources" cardinality="0..1" >
+		<parameter name="Text" description="description" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="ObservationInRRM" cardinality="0..1">
+		<parameter name="Text" description="description">
+		</parameter>
+	</macro>
+
+	<macro name="ObservationWithXMM" cardinality="0..1">
+		<parameter name="Text" description="description">
+		</parameter>
+	</macro>
+
+	<macro name="RunSplitting" cardinality="0..">
+		<parameter name="RunId" description=" run description" type="stringNoEmpty">
+<errorDescription>The run id must be a capital letter between A and Z.
+</errorDescription>
+		<regexp>^[A-Z]$</regexp>
+		</parameter>	
+		<parameter name="Tokens" description="the tokens of the split" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="ScientificRationale" cardinality="0..1">
+		<parameter name="Text" description="description" type="stringNoEmpty">
+		</parameter>
+	</macro>
+
+	<macro name="Desc" cardinality="0..1">
+		<parameter name="Text" description="Description of the instrument and its operation" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	<macro name="Comm" cardinality="0..1">
+		<parameter name="Text" description="On which telescope(s) has instrument been commissioned/used" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	<macro name="WV" cardinality="0..1">
+		<parameter name="Text" description="Total weight and value of equipment to be shipped" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	<macro name="Wfocus" cardinality="0..1">
+		<parameter name="Text" description="Weight at the focus (including ancillary equipment)" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	<macro name="Interf" cardinality="0..1">
+		<parameter name="Text" description="Compatibility of attachment interface with required focus" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	<macro name="Focal" cardinality="0..1">
+		<parameter name="Text" description="Back focal distance value" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	<macro name="Acqu" cardinality="0..1">
+		<parameter name="Text" description="Acquisition, focusing, and guiding procedure" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	<macro name="Softw" cardinality="0..1">
+		<parameter name="Text" description="Compatibility with ESO software standards (data handling)" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	<macro name="Suppl" cardinality="0..1">
+		<parameter name="Text" description="Estimate of services expected from ESO (in person days)" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="SpecialRemark" cardinality="0..">
+		<parameter name="Text" description=" special remark " type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="SubCategoryCode" cardinality="1">
+		<parameter name="CategoryCode" description="The astronomical category of the proposal.">
+			<values>A1 A2 A3 A4 A5 A6 A7 A8 A9 B1 B2 B3 B4 B5 B6 B7 B8 C1 C2 C3 C4 C5 C6 C7 C8 D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12 L0</values>
+		</parameter>
+	</macro>
+
+	<macro name="Target" cardinality="1..250" verifier="org.eso.ohs.phrs.esoform.verifyMacro.TargetMacroVerifier">
+		<parameter name="RunId" description="Run Id">
+		<errorDescription>The run id must be a capital letter between A and Z.</errorDescription>
+	<regexp>^[A-Z]+$</regexp>
+		</parameter>
+		<parameter name="TargetName" description="Name of the Target" type="stringNoEmpty">
+		</parameter>
+		<parameter name="RaString" description="Right Ascension" type="stringNoEmpty">
+		</parameter>
+		<parameter name="DecString" description="Declination" type="stringNoEmpty">
+		</parameter>
+		<parameter name="TimeOnTargetString" description="Time spent on this specific target">
+<errorDescription>Must be a decimal number (with two decimal digits max)
+</errorDescription>
+			<regexp>
+			^[0-9]*(\.[0-9]([0-9])?)?
+			</regexp>
+		</parameter>
+		<parameter name="Magnitude" description="Magnitude of the object">
+			<!-- For the moment is not clear whether we should check this field or not.  
+			 <regexp>
+                        ^[0-9]*(\.[0-9]([0-9])?)?
+			</regexp> 
+			-->
+		</parameter>
+		<parameter name="Diameter" description="Apparent diameter of the object">
+			<!-- For the moment is not clear whether we should check this field or not. 
+			<regexp>
+	                        ^[0-9]*(\.[0-9]([0-9])?)?
+			</regexp>
+			-->
+		</parameter>
+		<parameter name="Info" description="Generic information about the object">
+		</parameter>
+		<parameter name="ReferenceSource" description="Standard Star, either GSC or AIRMASS (for NACO instrument)">
+		</parameter>
+	</macro>
+
+	<macro name="TargetNotes" cardinality="0..1">
+		<parameter name="Text" description="Comment that  apply to all  targets" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="TelescopeJustification" cardinality="0..1">
+		<parameter name="Text" description="description" type="stringNoEmpty">
+		</parameter>
+	</macro>
+
+	<macro name="Thesis" cardinality="0..1">
+		<parameter name="student" description="Name and description" type="stringNoEmpty">
+		</parameter>
+		<parameter name="status" description="status of the thesis">
+			<values>
+           s m n       
+			</values>
+			</parameter>
+	</macro>
+
+	<macro name="TimeCritical" cardinality="0.." verifier="org.eso.ohs.phrs.esoform.verifyMacro.TimeCriticalMacroVerifier">
+			<parameter name="RunId" description=" run description" type="stringNoEmpty">
+<errorDescription>The run id must be a capital letter between A and Z.
+</errorDescription>
+		<regexp>^[A-Z]$</regexp>
+		</parameter>	
+		<parameter name="FromDate" description="start date" type="stringNoEmpty">
+		</parameter>
+		<parameter name="ToDate" description="end date" type="stringNoEmpty">
+		</parameter>
+		<parameter name="Note" description="Note" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="Title" cardinality="1">
+		<parameter name="Text" description="Title of the proposal" type="stringNoEmpty">
+		</parameter>
+	</macro>
+
+	<macro name="UnsuitableTimes" cardinality="0..">
+		<parameter name="RunId" description="referred run" type="stringNoEmpty">
+<errorDescription>The run id must be a capital letter between A and Z.
+</errorDescription>
+			<regexp>^[A-Z]$</regexp>
+		</parameter>
+		<parameter name="FromDate" description="start of forbidden date" type="stringNoEmpty">
+		</parameter>
+		<parameter name="ToDate" description="end of forbidden date" type="stringNoEmpty">
+		</parameter>
+		<parameter name="Note" description="justification of the constraint" type="stringNoEmpty">
+		</parameter>
+	</macro>
+
+   <macro cardinality="*" name="VLTITarget">
+      <parameter name="RunId">
+<errorDescription>The run id must be a capital letter between A and Z.
+</errorDescription>
+          <regexp>^[A-Z]$</regexp>
+      </parameter>
+			
+      <parameter name="Target" type="stringNoEmpty"/>
+		
+      <parameter name="Vmag" type="number">
+        <errorDescription>Must be a decimal number (with two decimal digits max)
+        </errorDescription>
+                       <regexp>
+            ^-?[0-9]*(\.[0-9]([0-9])?)?
+            </regexp>
+    </parameter>
+      
+      <parameter name="Maglambda" description="Magnitude of lambda" type="number">
+    <errorDescription>Must be a decimal number (with two decimal digits max)
+    </errorDescription>
+                       <regexp>
+            ^-?[0-9]*(\.[0-9]([0-9])?)?
+            </regexp>
+    </parameter>
+
+      <parameter name="Lambdaobs" type="number" >
+      <errorDescription>Must be a decimal number (with two decimal digits max)
+	  </errorDescription>
+            <regexp>
+			^[0-9]*(\.[0-9]([0-9])?)?
+			</regexp>
+      </parameter>
+      
+      <parameter name="Size" description="Size of lambda" type="number" />
+      
+      <parameter name="Baseline">
+         <values>A0-G1-J2-K0 UT1-UT2-UT3-UT4 UT1-UT2-UT3-UT4</values>
+      </parameter>
+      
+      <parameter name="Visibility"/>
+      
+      <parameter description="Correlated magnitude" name="MagC" />
+      
+      <parameter description="Time on target" name="TimeOnTarget" type="number" >
+	<errorDescription>Must be a decimal number (with two decimal digits max)
+</errorDescription>
+                   	<regexp>
+			^[0-9]*(\.[0-9]([0-9])?)?
+			</regexp>
+</parameter>
+</macro>
+
+      <macro name="VLTITargetNotes" cardinality="0..1">
+		<parameter name="TargetNotes" description="notes for VLTI targets" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+	<macro name="visitorModeInstruments" cardinality="0..">
+		<parameter name="instruments" description="instrument list" type="stringNoEmpty">
+		   <values> NOINSTRUMENT </values>
+		</parameter>
+	</macro>
+	
+	<macro name="serviceModeInstruments" cardinality="0..">
+		<parameter name="instruments" description="instrument list" type="stringNoEmpty">
+		   <values>ARTEMIS EFOSC2 ESPRESSO-1UT FLAMES FORS2 GRAVITY HARPS HAWKI KMOS LABOCA MUSE NACO OMEGACAM PI230 PIONIER SEPIA SINFONI SOFI SPHERE ULTRACAM UVES VIRCAM VISIR XSHOOTER</values>
+		</parameter>
+	</macro>
+	
+	<macro name="instrumentsForNormal" cardinality="0..">
+		<parameter name="instruments" description="instrument list" type="stringNoEmpty">
+		   <values>ARTEMIS EFOSC2 ESPRESSO-1UT FLAMES FORS2 GRAVITY HARPS HAWKI KMOS LABOCA MUSE NACO OMEGACAM PI230 PIONIER SEPIA SINFONI SOFI SPHERE ULTRACAM UVES VIRCAM VISIR XSHOOTER</values>
+		</parameter>
+	</macro>
+	
+	<macro name="instrumentsForShort" cardinality="0..">
+		<parameter name="instruments" description="instrument list" type="stringNoEmpty">
+		   <values> NOINSTRUMENTS </values>
+		</parameter>
+	</macro>
+	
+	
+	<macro name="instrumentsForLarge" cardinality="0..">
+		<parameter name="instruments" description="instrument list" type="stringNoEmpty">
+		   <values> NOINSTRUMENTS </values>
+		</parameter>
+	</macro>
+	
+	
+        <macro name="piCountries" cardinality="0..">
+                <parameter name="countries" description="List of supported countries" type="stringNoEmpty">
+                <values>AT AUS B CH CZ D DK E ESA ESO F FIN I NL OTHER P PL RCH S UK USA</values>
+                </parameter>
+        </macro>
+
+	<macro name="minimumTimeForGtc" cardinality="0..">
+		<parameter name="time" description="Minimum time for a large programme. In hours" type="stringNoEmpty">
+		   <values>180</values>
+		</parameter>
+	</macro>
+	
+	<macro name="documentclassForLarge" cardinality="0..">
+		<parameter name="documentclassTag" description="value for the documentclass tag" type="stringNoEmpty">
+		   <values>esoformlarge</values>
+		</parameter>
+	</macro>
+	
+	
+	<macro name="documentclassForShort" cardinality="0..">
+		<parameter name="documentclassTag" description="value for the documentclass tag" type="stringNoEmpty">
+		   <values>esoformshort</values>
+		</parameter>
+	</macro>
+	
+	<macro name="documentclassForNormal" cardinality="0..">
+		<parameter name="documentclassTag" description="value for the documentclass tag" type="stringNoEmpty">
+		   <values>esoform</values>
+		</parameter>
+	</macro>
+	
+	
+		<macro name="WhyLunarPhase" cardinality="1">
+		<parameter name="Text" description="description" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+		<macro name="WhyNights" cardinality="1">
+		<parameter name="Text" description="description" type="stringNoEmpty">
+		</parameter>
+	</macro>
+	
+	
+	<macro name="end" cardinality="0..">
+		<parameter name="Text" description=" special remark " type="stringNoEmpty">
+		</parameter>
+	</macro>
+	<macro name="MakeProposal" cardinality="0..">
+	</macro>
+	
+</esoform>
+
+
+

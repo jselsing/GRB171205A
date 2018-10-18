@@ -1,0 +1,21 @@
+This is the ESOFORM package for preparing application forms for
+observing time at the La Silla Paranal Observatory.  
+
+This set contains the following files:
+
+README                       This file
+common2e.sty	             ESOFORM LaTeX style file
+config.sty                   ESOFORM LaTeX style file
+esoform.cls                  ESOFORM LaTeX class file
+esologo.pdf                  The ESO logo in pdf format
+
+usersmanualDDT.tex           ESOFORM Users' Manual LaTeX source
+usersmanualDDT.pdf           ESOFORM Users' Manual PDF
+templateDDT.tex              An example application form
+galaxy.pdf                   An example figure to go with template.tex
+
+To install the ESOFORM package, just expand (with unzip) the package
+file. You can then edit the template.tex (or templateshort.tex) file 
+to prepare your own proposal(s), following the instructions given in 
+the Users' Manual.
+
