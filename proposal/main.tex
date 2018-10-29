@@ -91,12 +91,12 @@
 %
 % DO NOT USE ANY TEX/LATEX MACROS IN THE TITLE
 
-\Title{This Is The Proposal Title This Is The Proposal Title}  
+\Title{Collapsars as the dominant contributor to the Galactic $r$-process abundances and the case of SN2017iuk.}  
 
 % Type below the numeric code corresponding to the subcategory of your
 % programme.
 
-\SubCategoryCode{X0}   
+\SubCategoryCode{D5}   
 
 % Please specify the type of programme you are submitting.
 % Valid values: DDT
@@ -110,8 +110,11 @@
 %
 % DO NOT USE ANY TEX/LATEX MACROS IN THE ABSTRACT
 
-\Abstract{This is a concise abstract of the proposal which may have up
-  to 9 lines.}
+\Abstract{The pioneering event that signalled the beginning of multi-messenger astrophysics, GW170817/GRB170817, and the accompanying kilonova, AT2017gfo, have been claimed to be primary source of $r$-process material in the universe. However, some  ultra-faint dwarf galaxies, like Reticulum II, is polluted early in its history by a rare, high-yield source. The time required for a binary star merger and low velocities of the natal kicks poses a problem for the suggestion that a binary neutron star merger is the source. A recent theoretical development suggests that the broad-lines Ic supernovae accompanying Gamma-Ray Bursts could be an additional source of the Galactic $r$-process. This process would work on a sufficiently rapid timescale, be associated especially with low-metallicity environments, and has suffient $r$-process yields to explain the inferred abundances. This theoretical model is directly testable in the recent supernovae, SN2017iuk. Only displaced by 163 Mpc from Earth, this exceptionally nearby supernovae will allow us to .}
+
+
+
+% The delay time for coalecensce of a binary neutron star system simultaneously needs to be sufficiently short ($<$ 100 Myr) compared to the brief timescale over which the stellar population was formed, while the supernova explosions giving birth to the two neutron stars would need to impart them with small natal kicks in order to retain the binary in such a tiny host galaxy. 
 
 %---- BOX 3 ------------------------------------------------------------
 %
@@ -160,10 +163,9 @@
 % If a TOO run is specified the related information must be filled in
 % in the \TOORun macro.
 
-\ObservingRun{A}{102}{FORS2}{4h}{nov}{n}{0.8}{PHO}{s}{}
-\ObservingRun{A/alt}{102}{FORS2}{8h}{nov}{n}{0.8}{PHO}{s}{}
-\ObservingRun{B}{102}{FORS2}{6h}{oct}{n}{1.4}{THN}{s}{}
-\ObservingRun{C}{102}{FORS2}{6h}{oct}{n}{n}{THN}{s}{}
+\ObservingRun{A}{102}{HAWKI}{1h}{dec}{n}{0.8}{PHO}{s}{}
+\ObservingRun{B}{102}{XSHOOTER}{4h}{dec}{n}{0.8}{PHO}{s}{}
+
 
 % Proprietary time requested.
 % Valid values: % 0, 1, 2, 6, 12
@@ -234,12 +236,12 @@
 % used in the CoI macro, but the processing of the proposal
 % keeps hanging indefinitely.
 
-\PI{insert ESO User Portal username here}
-\CoI{H.}{Cerny}{1096}
-\CoI{S.}{Bailer-Brown}{1150}
-\CoI{K.L.}{Giorgi}{1098}
-\CoI{S.}{Lichtman}{1258} 
 
+\PI{JSELSING}
+\CoI{D.}{Watson}{1227}
+\CoI{D.}{Malesani}{1227}
+\CoI{J.}{Bolmer}{1261}
+\CoI{P.}{Schady}{1496}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% THE TWO PAGES OF THE SCIENTIFIC DESCRIPTION AND FIGURES %%%%%%%%%%
@@ -254,9 +256,24 @@
 %
 % All macros in this box are NOT checked at the pdfLaTeX compilation.
 
-\ScientificRationale{Scientific rationale: scientific background of
-  the project, pertinent references; previous work plus justification
-  for present proposal.}
+\ScientificRationale{
+%Scientific rationale: scientific background of
+%  the project, pertinent references; previous work plus justification
+%  for present proposal.
+
+Since August 2017, the primary source of the $r$-process elements in the universe is believed to be formed in the merger of two neutron stars (ref), however see C\^ot\'e et al. 2018 arXiv:1809.03525. This is based on the discovery of the first electromagnetic counterpart to a gravitational wave signal and the inferred $r$-process yields. 
+
+First localised in gravitational waves (Abbott et al. 2017,  Phys. Rev. Lett. 119, 161101), the first optical counterpart to a binary neutron star merger was observed intensely in the entire electromagnetic spectrum (Abbott et al. 2017 ApJl 848, L12). From multi-wavelength imaging (Villar et al. 2017 ApJ 851 21) and spectroscopy covering the entire atmospheric transmission window (Smartt et al. 2017 Nat. 551 75, Pian et al. 2017 Nat. 551 67), a wealth of information is available in the primary emitting wavelength region, regarding the emission mechanisms, the composition of the emitting material, and the state of the gas contributing to the emission. Based on the comparison between the theoretical brightness as a function of ejecta mass and the observed luminosity of the kilonova an ejecta mass can be inferred. Assuming a composition of the ejecta and using an estimated neutron star merger rate as a function of time, it derived that neutron star mergers can be the primary source of $r$-process elements in the universe (refs). 
+
+However, determining the composition of the neutron star merger ejecta have so far proven difficult. The evidence for the ejecta being dominated by heavy $r$-process elements primarily stems from the qualitative agreement between the light curve evolution and spectroscopic evolution, as compared with theoretically synthesised models (Kasen et al. 2017 Nat 551, Tanaka et al. 2017 ). Attempts have been made to spectroscopically identify single elements (Smartt et al. 2017), where transitions from Cs\,\textsc{i} and Te\,\textsc{i} are suggested to cause observed spectroscopic absorption features. This identification is, however, still not confirmed and likely not the cause of the observed absorption features (Watson et al. in submitted). One of the reasons for the absence of spectral identifications is the inadequacy of the atomic data of the heaviest elements (Barnes & Kasen 2013 ApJ 775 18), which causes the spectral modelling to rely on synthetic line-list, known to be discrepant compared to measured line strenghts (Waxman et al. 2017 arXiv:). As a consequence, the existence of $r$-process material in the neutron star merger of AT2017gfo must still be considered circumstantial, until direct spectroscopic identification of single elements are performed. 
+
+The initial powering of the emission in AT2017gfo is likely the radioactive decay of a large number of radioactive isotopes of the freshly synthesised material (Metzger 2017 LRR 20 3). As the energy from the radioactive decay is lost to radiation, the ejecta is left to cool and freely expand into the surrounding medium in a homologous way. As the expanding ejecta is encountering the interstellar medium, material is swept up and shock-heated by converting parts of the vast amount of kinetic energy locked away in the ejecta to be released as radiation. The X-ray generated in the shocks are reprocessed by high-opacity material and re-emitted at near-infrared wavelengths. The timescale for the powering depends on the ejected mass and the density and structure of the surrounding medium, where approximately the ejected mass needs to swept up, in order to significantly power the line emission. As enough material is swept up, a reverse shock is generated, moving inwards, heating the ejecta. 
+
+SN 1987A is an example of this re-brightening, where the SN ejecta encounters a pre-explosion shell that is ejected by the progenitor, prior to explosion. 
+  
+  
+  
+  }
 
 \ImmediateObjective{Immediate objective of the proposal: state what is
   actually going to be observed and what shall be extracted from the
@@ -423,8 +440,6 @@
 % DO NOT USE ANY TEX/LATEX MACROS FOR THE TARGETS
 
 \Target{A}{NGC 253}{00 47 33.1}{-25 17 17.8}{4}{8}{}{Seyfert gal.}{}
-\Target{B}{Alpha CMa}{06 45 08.9}{-16 42 58}{6}{-1.4}{6 mas}{Sirius}{}
-\Target{C}{Alpha Ori}{05 55 10.3}{+07 24 25.4}{1}{0.6}{}{HIC 27989}{}
 
 
 % Use TargetNotes to include any comments that apply to several or all
@@ -456,8 +471,8 @@
 % 2nd argument: run splitting requested for sub-runs
 % This parameter is NOT checked at the pdfLaTeX compilation.
 
-\RunSplitting{B}{2,10s,2,20w,2}
-\RunSplitting{C}{2,10s,2,20w,2,15s,4H2}
+%\RunSplitting{B}{2,10s,2,20w,2}
+%\RunSplitting{C}{2,10s,2,20w,2,15s,4H2}
 
 % 2. LINK FOR COORDINATED OBSERVATIONS BETWEEN DIFFERENT RUNS.
 %
@@ -470,8 +485,8 @@
 % 3rd argument: run ID
 % Valid values: run IDs specified in BOX 3
 
-\Link{B}{after}{A}{2}
-\Link{C}{after}{B}{}
+%\Link{B}{after}{A}{2}
+%\Link{C}{after}{B}{}
 %\Link{E}{simultaneous}{F}{}
 
 
@@ -537,13 +552,13 @@
 
 % Examples (to be commented or deleted)
 
-\INSconfig{A}{FORS2}{Detector}{MIT}
-\INSconfig{A}{FORS2}{IMG}{ESO filters: provide list HERE}
-\INSconfig{B}{XSHOOTER}{SLT}{readout UVB,readout VIS,readout NIR}
-\INSconfig{C}{EFOSC2}{Imaging-filters}{EFOSC2 filters: provide list here}
-\INSconfig{D}{NACO}{IMG 54 mas/px VIS-WFS}{provide list of filters HERE}
-\INSconfig{E}{XSHOOTER}{SLT}{readout UVB,readout VIS,readout NIR}
-\INSconfig{F}{XSHOOTER}{SLT}{readout UVB,readout VIS,readout NIR}
+%\INSconfig{A}{FORS2}{Detector}{MIT}
+%\INSconfig{A}{FORS2}{IMG}{ESO filters: provide list HERE}
+%\INSconfig{B}{XSHOOTER}{SLT}{readout UVB,readout VIS,readout NIR}
+%\INSconfig{C}{EFOSC2}{Imaging-filters}{EFOSC2 filters: provide list here}
+%\INSconfig{D}{NACO}{IMG 54 mas/px VIS-WFS}{provide list of filters HERE}
+%\INSconfig{E}{XSHOOTER}{SLT}{readout UVB,readout VIS,readout NIR}
+%\INSconfig{F}{XSHOOTER}{SLT}{readout UVB,readout VIS,readout NIR}
 %
 % Real list of instrument configurations
 %
@@ -706,6 +721,7 @@
 %\INSconfig{}{XSHOOTER}{300-2500nm}{SLT}
 %\INSconfig{}{XSHOOTER}{300-2500nm}{IFU}
 %
+\INSconfig{A}{XSHOOTER}{300-2500nm}{SLT}
 % Slits (SLT only):
 %
 %UVB arm, available slits in arcsec: 0.5, 0.8, 1.0, 1.3, 1.6, 5.0
@@ -719,6 +735,7 @@
 % Replace SLIT-UVB, SLIT-VIS, SLIT-NIR with the choice of the slits:
 %\INSconfig{}{XSHOOTER}{SLT}{SLIT-UVB,SLIT-VIS,SLIT-NIR}
 %
+\INSconfig{A}{XSHOOTER}{SLT}{1.0,0.9,0.9JH}
 % Detector readout mode:
 %
 % UVB and VIS arms: available readout modes and binning:
@@ -728,6 +745,7 @@
 %\INSconfig{}{XSHOOTER}{IFU}{readout UVB,readout VIS,readout NIR}
 %\INSconfig{}{XSHOOTER}{SLT}{readout UVB,readout VIS,readout NIR}
 %
+\INSconfig{A}{XSHOOTER}{SLT}{100k-1x2,100k-1x2 VIS,NDR}
 % Imaging mode 
 % replace 'list of filters' by the actual filters you wish to use among:
 % U, B, V, R, I, Uprime, Gprime, Rprime, Iprime, Zprime
