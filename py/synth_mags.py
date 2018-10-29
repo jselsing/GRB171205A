@@ -145,12 +145,17 @@ def main():
     fig, ax1 = pl.subplots()
 
 
+    dts = []
+    mags = []
+    mag_err_l = []
+    mag_err_h = []
+
     for ii, OB in enumerate(OBs):
 
         wl, flux, error, t_obs = get_data("../data", OB, filter_bad=True)
         dt = np.around(timediff(t_trigger, t_obs), 1)
 
-
+        dts.append(dt)
         passbands = ["Bessell_B.dat", "Bessell_R.dat", "2MASS_J.dat"]
         pass_names = ["B", "R", "J"]
 
@@ -163,6 +168,9 @@ def main():
         # print(bands)
         # exit()
         pl.plot(wl[::10], medfilt(flux, 51)[::10], color="black", alpha= 0.7, linestyle="steps-mid")
+        holder = []
+        holder_el = []
+        holder_eh = []
         for pp, kk in enumerate(passbands):
             # print(bands['INS.FILT1.NAME'])
             # meas_mag = bands.loc[bands['INS.FILT1.NAME'] == "%s_prime"%kk[-5]]
@@ -179,6 +187,10 @@ def main():
             _, _, _, synmag_err_low = synpassflux(wl, flux - error, kk)
             e_u = (synmag - synmag_err_up)
             e_l = (synmag_err_low - synmag)
+            holder.append(np.around(synmag - dist_mod, 1))
+            holder_el.append(np.around(e_u, 1))
+            holder_eh.append(np.around(e_l, 1))
+
             pl.errorbar(cwav, synmag_flux, xerr = [[cwave]], yerr = synmag_error,  fmt = 'o', zorder = 10, ms = 5, elinewidth=1.7, label = "%s = %s$^{+%s}_{-%s}$"%(pass_names[pp], np.around(synmag - dist_mod, 1), np.around(e_u, 1), np.around(e_l, 1)))
 
             # if meas_mag.shape[0] > 0:
@@ -189,7 +201,9 @@ def main():
             #     pl.errorbar(cwav, meas_flux, xerr = [[cwave]], yerr = [[(meas_flux_do, meas_flux_up)]],  fmt = 'o', ms = 15)
 
 
-
+        mags.append(holder)
+        mag_err_l.append(holder_el)
+        mag_err_h.append(holder_eh)
 
         pl.title("dt = %s days"%dt)
         pl.legend()
@@ -200,7 +214,7 @@ def main():
         pl.xlim(3000, 25000)
         pl.savefig("../figures/SN2017iuk_%s.pdf"%dt)
         pl.clf()
-
+    print(dts, mags, mag_err_l, mag_err_h, pass_names)
             # with open("density_prof_%s.dat"%OB, "wb") as f:
             #   f.write(b'1e4 second\n')
             #   np.savetxt(f, list(zip(np.arange(len(v)), v, rho.value)), fmt="%i %10.3f %1.4e")
