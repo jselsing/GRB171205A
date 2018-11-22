@@ -7,6 +7,11 @@ import matplotlib.pyplot as pl
 import seaborn as sns
 sns.set_style('ticks')
 
+
+font = {'family' : 'serif',
+        'size'   : 14}
+pl.rc('font', **font)
+
 import numpy as np
 import pandas as pd
 from astropy.io import fits
@@ -29,7 +34,7 @@ def main():
     ax1.errorbar(synphot["dt"]+0.2, synphot["J"]-2, yerr=[synphot["J_el"], synphot["J_eh"]], fmt=".", label="J-2")
     ax1.set_xlabel("Time since GRB trigger (days)")
     ax1.set_ylabel("Absolute magnitude (mag)")
-    ax1.set_xlim((0, 279))
+    ax1.set_xlim((0, 69))
     ax1.set_ylim((-21, -9,))
 
     pl.legend()
