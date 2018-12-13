@@ -346,13 +346,13 @@ theoretical spectra and the observed ones. The observed spectra will then serve
 as a benchmark going forward, also for the theoretical modelling of these types
 of transients.
 
-SN2017iuk will be observable in December. Based on the extrapolated light curve
-from Siegel et al. 2018, it will be brightest in the near-infrared. The imaging
-will both allow us to put a strong limit on the amount of $r$-process material,
-and will provide a precise flux reference to recalibrate the spectra to. The
-prospect of detecting nebular emission from $r$-process elements, additionally
-provides a tantalizing opportunity to find the first direct evidence for the
-production site.
+SN2017iuk has just become observable again, but is fading. Based on the
+extrapolated light curve from Siegel et al. 2018, it will be brightest in the
+near-infrared. The imaging will both allow us to put a strong limit on the
+amount of $r$-process material, and will provide a precise flux reference to
+recalibrate the spectra to. The prospect of detecting nebular emission from
+$r$-process elements, additionally provides a tantalizing opportunity to find
+the first direct, spectroscopic evidence for the production site.
 
 }
 
@@ -399,21 +399,37 @@ lunar phase is a secondary concern.
 %  can be found in Sections 7.1 and 7.2 in the Call for Proposals.
 \newline
 {\bf HAWK-I imaging:} 
-To calculate the required exposure time we use the HAWK-I Exposure Time Calculator Infrared Imaging Mode Version P103.3. Based on the extrapolated light-curve and assuming the Planck 2018 cosmology, the transient is expected to be around $J \sim 24 $mag. In order for us to confidently reject or confirm the model, a $\sim 10 \sigma$ detection is required and for that we need 3000 s exposure, which including overhead totals 3600 s. 
+To calculate the required exposure time we use the HAWK-I Exposure Time Calculator Infrared Imaging Mode Version P103.3. Based on the extrapolated light-curve and assuming the Planck 2018 cosmology, the transient is expected to be around $J \sim 24 $~mag. In order for us to confidently reject or confirm the model, a $\sim 10 \sigma$ detection is required and for that we need 2000 s exposure, which including overhead totals 1 hr based on the spectrum of the kilonova, AT2017gfo after 10 days. 
+
+{\bf X-shooter spectroscopy:} 
+Similarily, we use the X-SHOOTER Exposure Time Calculator Version P103.3. As predicted by Siegel et al. (2018), the features we are looking for likely have a velocity comparable to the features in AT2017gfo, but since we do not know in advance the appearance, this is our starting guess. As the input spectrum, we therefore use the kilonova spectrum of AT2017gfo after 10.5 days, to get a spectrum dominated by near-infrared features. In 9600 s, we can get a S/N of 1 per spectral bin across the emission features. Because of the expected width of the features, we can bin the spectrum by close to 100 pixel elements, thus ensuring a S/N $\sim 10$ in the centres of any potential lines. This will allow us to identify them, if they are there, but otherwise exclude the presence if any at high significance. Including the overhead for the X-shooter observations results in the 4 hrs required to reach our science benchmark goal. 
+
+
 }
 
-\TelescopeJustification{Justification for the use of the selected
-  telescope (e.g., VLT, NTT, etc...)  with respect to other available
-  alternatives.}
+\TelescopeJustification{
+	
+%Justification for the use of the selected
+% telescope (e.g., VLT, NTT, etc...)  with respect to other available
+%alternatives.
 
-\DDTJustification{Justification of the need for DDT. }
+ At the magnitudes we are probing, an 8-m class telescope is needed and X-shooter is by far the best instrument to carry out near-infrared spectroscopy to look for emission lines. As the lines we are looking for are potentially of unknown origin and wavelength position, we need the coverage provided by X-shooter to adequately cover the region of interest. At these magnitudes, only the VLT has the necessary sensitivity to provide good signal-to-noise observations that are necessary to reach our science goals.
+
+
+}
+
+\DDTJustification{
+	%Justification of the need for DDT. 
+The theoretical model that implicates GRB-SNe in the production of the $r$-process elements did not appear in the literature until after the P102 ESO proposal deadline and therefore was has not possible for us to apply for time to test this model  in regular time. SN2017iuk is a once-in-a-decade chance to test this model as the close GRB-SNe are very rare. However it is fading, therefore this will be the only chance in the foreseeable future to look for the formation of $r$-process elements in GRB-SNe. 
+
+}
 
 % Please specify the type of calibrations needed.
 % Valid values: standard, special
 % In case of special calibration the second parameter specifies them
 
-\Calibrations{special}{Adopt a special calibration}
-%\Calibrations{standard}{}
+%\Calibrations{special}{Adopt a special calibration}
+\Calibrations{standard}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PAGE OF BOXES 10-11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -425,9 +441,28 @@ To calculate the required exposure time we use the HAWK-I Exposure Time Calculat
 % periods) and description of the status of the obtained data.
 % This macro is NOT checked at the pdfLaTeX compilation.
 
-\LastObservationRemark{Report on the use of the ESO facilities during
-  the last 2 years (4 observing periods). Describe the status of the
-  data obtained and the scientific output generated.}
+\LastObservationRemark{
+
+099.D-0382(A) (PI Pian), 099.D-0622(C) (PI DAvanzo):
+X-shooter programme that obtained the first spectra of the kilonova, AT2017gfo. These observation defines the spectroscopic appearance of this completely new type of transient and is published in Nature. 
+
+	\smallskip\noindent
+
+099.A-0801(A) (PI Selsing):
+This programme covered the follow-up of gravitationally lensed SNe discovered in the RELICS survey. Only one suitable candidate was identified (RLC16Nim), for which this programme provided a redshift (Rodney et al. in prep). 
+
+\smallskip\noindent
+
+102.D-0353(A), 1102.D-0353(B), 1102.D-0353(C), 1102.D-0353(D), 0102.D-0350(A), 0102.D-0350(B), 0102.D-0350(C), 0102.D-0348(A), 0102.D-0348(B), 0102.D-0348(C) (PI ENGRAVE):
+
+Currently active programme to observe optical counterparts to gravitational wave sources. 
+	\smallskip\noindent
+
+%Report on the use of the ESO facilities during
+%the last 2 years (4 observing periods). Describe the status of the
+%data obtained and the scientific output generated.
+
+}
 
 %---- BOX 9a -- ESO Archive ------------------------------------------
 %
@@ -435,9 +470,8 @@ To calculate the required exposure time we use the HAWK-I Exposure Time Calculat
 % (http://archive.eso.org)? If yes, explain the need for new data.
 % This macro is NOT checked at the pdfLaTeX compilation.
 
-\RequestedDataRemark{Are the data requested in this proposal in the
-  ESO Archive (http://archive.eso.org)? If yes, explain the need for
-  new data.}
+\RequestedDataRemark{This is a proposal for a fading transient. The data requested are not in
+	the archive.}
 %
 %---- BOX 9b -- ESO GTO/Public Survey Programme Duplications---------
 %
@@ -446,13 +480,8 @@ To calculate the required exposure time we use the HAWK-I Exposure Time Calculat
 
 
 \RequestedDuplicateRemark{
-  Specify whether there is any duplication of targets/regions covered
-  by ongoing GTO programmes. If so, please
-  explain the need for the new data here. Details on the protected
-  target/fields in these ongoing programmes can be found at:
-
-  GTO programmes: http://www.eso.org/sci/observing/teles-alloc/gto/index.html
-
+There is no duplication of targets/regions covered
+by ongoing GTO and/or Public Survey programmes.
 }
 
 %
@@ -472,11 +501,16 @@ To calculate the required exposure time we use the HAWK-I Exposure Time Calculat
 % This macro is NOT checked at the pdfLaTeX compilation.
 
 \Publications{
-  Name1 A., Name2 B., 2001, ApJ, 518, 567: Title of article1
-  \smallskip\\
-  Name3 A., Name4 B., 2002, A\&A, 388, 17: Title of article2
-  \smallskip\\
-  Name5 A. et al., 2002, AJ, 118, 1567: Title of article3
+	
+J. Selsing et al. 2018 accepted for publication in A\&A(arXiv:1802.07727) {\em ``The X-shooter GRB afterglow legacy sample (XS-GRB)''} \smallskip \\ 
+J. Selsing et al. 2018 A\&A, 616, A48 {\em ``The host galaxy of the short GRB111117A at z=2.211: impact on the short GRB redshift distribution and progenitor channels''} \smallskip \\ 
+L. Izzo et al. 2018 accepted for publication in Nature {\em ``Jet cocoon signatures in the early spectra of a gamma-ray burst/supernova''} \smallskip \\ 
+Watson et al. 2018 submitted for publication in Nature {\em ``Discovery of neutron-capture elements in a neutron star merger'} \smallskip \\ 
+B.P. Abbott et al. 2017 ApJL 848 12 {\em ``Multi-messenger Observations of a Binary Neutron Star Merger''} \smallskip \\
+E. Pian et al. 2017 Nature 551 67 {\em ``Spectroscopic identification of r-process nucleosynthesis in a double neutron-star merger''} \smallskip  \\
+J. Anderson et al. 2018 A\&A, 620, A67 {\em ``A nearby superluminous supernova with a long pre-maximum ’plateau’ and strong C ii features''} \smallskip  \\
+
+
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -529,15 +563,15 @@ To calculate the required exposure time we use the HAWK-I Exposure Time Calculat
 %
 % DO NOT USE ANY TEX/LATEX MACROS FOR THE TARGETS
 
-\Target{A}{NGC 253}{00 47 33.1}{-25 17 17.8}{4}{8}{}{Seyfert gal.}{}
-\Target{B}{NGC 253}{00 47 33.1}{-25 17 17.8}{4}{8}{}{Seyfert gal.}{}
+\Target{AB}{SN2017iuk}{11 09 39.55}{-12 35 17.9}{5}{24}{}{Superposed on a spiral galaxy}{}
+%\Target{B}{NGC 253}{00 47 33.1}{-25 17 17.8}{4}{8}{}{Seyfert gal.}{}
 
 
 % Use TargetNotes to include any comments that apply to several or all
 % of your targets.
 % This macro is NOT checked at the pdfLaTeX compilation.
 
-\TargetNotes{This is a note about targets.}
+\TargetNotes{All the time will be used to observe the fading SN2017iuk.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% TWO PAGES OF SCHEDULING REQUIREMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -552,7 +586,7 @@ To calculate the required exposure time we use the HAWK-I Exposure Time Calculat
 % constraints can be entered in Special Remarks and using the
 % other flags in Box 13.
 
-\HasTimingConstraints{}
+%\HasTimingConstraints{}
 
 % 1. RUN SPLITTING, FOR A GIVEN ESO TELESCOPE (Visitor Mode only)
 %
@@ -594,8 +628,8 @@ To calculate the required exposure time we use the HAWK-I Exposure Time Calculat
 % Format: dd-mmm-yyyy
 % This parameter is NOT checked at the pdfLaTeX compilation.
 
-\UnsuitableTimes{A}{15-jan-19}{18-jan-19}{Insert reason here}
-\UnsuitableTimes{B}{15-jan-19}{18-jan-19}{Insert reason here}
+%\UnsuitableTimes{A}{15-jan-19}{18-jan-19}{Insert reason here}
+%\UnsuitableTimes{B}{15-jan-19}{18-jan-19}{Insert reason here}
 
 %
 %---- BOX 12 contd.. -- Scheduling Requirements
@@ -614,8 +648,8 @@ To calculate the required exposure time we use the HAWK-I Exposure Time Calculat
 % Format: dd-mmm-yyyy
 % This parameter is NOT checked at the pdfLaTeX compilation.
 
-\TimeCritical{A}{12-nov-18}{14-nov-18}{insert reason for time-critical observations.}
-\TimeCritical{B}{12-nov-18}{14-nov-18}{insert reason for time-critical observations.}
+%\TimeCritical{A}{12-nov-18}{14-nov-18}{insert reason for time-critical observations.}
+%\TimeCritical{B}{12-nov-18}{14-nov-18}{insert reason for time-critical observations.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -1011,11 +1045,11 @@ To calculate the required exposure time we use the HAWK-I Exposure Time Calculat
 %
 %\INSconfig{}{HAWKI}{PRE-IMG}{provide list of filters (Y,J,H,Ks,CH4,BrG,H2,NB1190,NB1060,NB2090) HERE}
 %
-\INSconfig{A}{HAWKI}{PRE-IMG}{Y,J,H,Ks}
+\INSconfig{A}{HAWKI}{PRE-IMG}{J}
 
 %\INSconfig{}{HAWKI}{IMG}{provide list of filters (Y,J,H,Ks,CH4,BrG,H2,NB1190,NB1060,NB2090) HERE}
 
-\INSconfig{A}{HAWKI}{IMG}{Y,J,H,Ks}
+\INSconfig{A}{HAWKI}{IMG}{J}
 
 %\INSconfig{}{HAWKI}{FASTJITT}{Provide list of filters  (Y,J,H,Ks,CH4,BrG,H2,NB1190,NB1060,NB2090) HERE}
 %
